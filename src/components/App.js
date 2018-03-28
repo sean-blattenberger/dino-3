@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "../App.css";
 import JobDetails from "./JobDetails";
 import JobForm from "./JobForm";
-// let success;
+
 const Header = () => {
   return (
     <header>
@@ -20,22 +20,22 @@ const Footer = () => {
 class App extends Component {
   state = {
     listing: [],
-    success: ''
-  }
+    success: ""
+  };
   componentDidMount() {
-    this.fetchListings()
+    this.fetchListings();
   }
   fetchListings() {
-    return fetch('./listing.json').then(res => res.json()).then(data => {
-      this.setState({ listing: data });
-      return data;
-    })
+    return fetch("./listing.json")
+      .then(res => res.json())
+      .then(data => {
+        this.setState({ listing: data });
+        return data;
+      });
   }
-  submitForm() {
-    // let successMessage = 'Your application has been submitted';
-    // const listings = { ...this.state.listing };
-    // listings['success'] = successMessage;
-    // this.setState({ listings })
+  submitForm = () => {
+    let successMessage = "Your application has been submitted";
+    this.setState({success: successMessage})
   }
   render() {
     return (
@@ -43,8 +43,8 @@ class App extends Component {
         <Header />
         <main>
           <JobDetails listing={this.state.listing} />
-          <JobForm submitForm={this.submitForm}/>
-          <p id="message">{''}</p>
+          <JobForm submitForm={this.submitForm} />
+          <p id="message">{this.state.success}</p>
           <button id="preview-toggle">Show Preview</button>
           <section id="application-preview" className="hidden" />
         </main>
