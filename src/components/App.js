@@ -39,12 +39,8 @@ class App extends Component {
     let successMessage = "Your application has been submitted";
     this.setState({success: successMessage, preview: ''})
   }
-  showPreview = () => {
-    console.log('show');
-  }
+
   updatePreview = (value) => {
-    // console.log('preview', this.state.preview);
-    // console.log(event.target);
     this.setState({ preview: value})
   }
   render() {

@@ -3,7 +3,6 @@ import React from "react";
 class JobForm extends React.Component {
   onSubmit = (event) => {
     event.preventDefault();
-    console.log(this.refs);
     this.props.submitForm();
     this.refs.form.reset();
   }
