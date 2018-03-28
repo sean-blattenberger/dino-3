@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "../App.css";
 import JobDetails from "./JobDetails";
 import JobForm from "./JobForm";
+import Preview from "./Preview";
 
 const Header = () => {
   return (
@@ -20,7 +21,8 @@ const Footer = () => {
 class App extends Component {
   state = {
     listing: [],
-    success: ""
+    success: "",
+    preview: ""
   };
   componentDidMount() {
     this.fetchListings();
@@ -35,7 +37,15 @@ class App extends Component {
   }
   submitForm = () => {
     let successMessage = "Your application has been submitted";
-    this.setState({success: successMessage})
+    this.setState({success: successMessage, preview: ''})
+  }
+  showPreview = () => {
+    console.log('show');
+  }
+  updatePreview = (value) => {
+    // console.log('preview', this.state.preview);
+    // console.log(event.target);
+    this.setState({ preview: value})
   }
   render() {
     return (
@@ -43,10 +53,9 @@ class App extends Component {
         <Header />
         <main>
           <JobDetails listing={this.state.listing} />
-          <JobForm submitForm={this.submitForm} />
+          <JobForm updatePreview={this.updatePreview} submitForm={this.submitForm} />
           <p id="message">{this.state.success}</p>
-          <button id="preview-toggle">Show Preview</button>
-          <section id="application-preview" className="hidden" />
+          <Preview preview={this.state.preview} />
         </main>
         <Footer />
       </div>
