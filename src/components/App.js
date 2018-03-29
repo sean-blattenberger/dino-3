@@ -36,7 +36,7 @@ class App extends Component {
       });
   }
   submitForm = () => {
-    let successMessage = "Your application has been submitted";
+    let successMessage = "Your application was submitted!";
     this.setState({success: successMessage, preview: ''})
   }
 

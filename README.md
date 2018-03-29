@@ -24,5 +24,6 @@
 3. Navigate to this folder and run `npm test`.
 
 #### Deployed Link
-
+https://build-ofhsmcpuxn.now.sh
 #### Framework of choice
+ReactJS
