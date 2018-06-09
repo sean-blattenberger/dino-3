@@ -3,21 +3,10 @@ import "../App.css";
 import JobDetails from "./JobDetails";
 import JobForm from "./JobForm";
 import Preview from "./Preview";
+import Header from "./Header"
+import Footer from "./Footer"
 
-const Header = () => {
-  return (
-    <header>
-      <img src="./assets/g-dino.png" alt="Dinosaur Logo" />
-    </header>
-  );
-};
-const Footer = () => {
-  return (
-    <footer>
-      <small>&copy; 2018</small>
-    </footer>
-  );
-};
+
 class App extends Component {
   state = {
     listing: [],

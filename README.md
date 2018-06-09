@@ -24,6 +24,6 @@
 3. Navigate to this folder and run `npm test`.
 
 #### Deployed Link
-https://build-ofhsmcpuxn.now.sh
+https://build-zuudrxjsej.now.sh
 #### Framework of choice
 ReactJS
